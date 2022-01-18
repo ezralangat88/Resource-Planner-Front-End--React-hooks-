@@ -7,6 +7,11 @@ class UserService{
         return axios.get(USER_API_BASE_URL)
     }
 
+    // Making Rest API Call and senting user data to Rest API and Rest API will internally save user data
+    addUser(user){
+        return axios.post(USER_API_BASE_URL, user);
+    }
+
 }
 
 export default new UserService();

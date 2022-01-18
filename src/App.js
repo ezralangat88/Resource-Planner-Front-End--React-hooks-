@@ -3,13 +3,21 @@ import './App.css';
 import FooterComponent from './Components/FooterComponent';
 import HeaderComponent from './Components/HeaderComponent';
 import ListUsersComponent from './Components/ListUsersComponent';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import AddUserComponent from './Components/AddUserComponent';
 
 function App() {
   return (
     <div>
-      <HeaderComponent/>
-      <ListUsersComponent/>
-      <FooterComponent/>
+      <Router>
+        <HeaderComponent/>
+          <Switch>
+            <Route exact path = '/' component = {ListUsersComponent} ></Route>
+            <Route path = '/employees' component = {ListUsersComponent} ></Route>
+            <Route path = '/add-employee' component = {AddUserComponent} ></Route>
+          </Switch>
+        <FooterComponent/>
+      </Router>
     </div>
   );
 }

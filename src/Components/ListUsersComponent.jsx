@@ -1,6 +1,7 @@
 //rafc /rfc
 import React, {useState, useEffect} from 'react'
 import UserService from '../Services/UserService'
+import { Link } from 'react-router-dom';
 
 const ListUsersComponent = () => {
 
@@ -20,6 +21,7 @@ const ListUsersComponent = () => {
     return (
         <div className='container'> 
                 <h2 className='text-center'>Employee List</h2>  
+                <Link to = 'add-employee' className='btn btn-primary mb-2'>Add user</Link>
                 <table className='table table-striped table-bordered'>
   
                 <thead>
@@ -62,3 +64,5 @@ export default ListUsersComponent
 
 //The useEffect Hook allows you to perform side effects
 //(e.g  fetching data, directly updating the DOM, and timers.) in your components.
+
+//useHistory Hook gives you access to the history instance that you use to navigate.
