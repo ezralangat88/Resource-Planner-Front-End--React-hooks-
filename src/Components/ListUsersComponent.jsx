@@ -1,9 +1,21 @@
 //rafc /rfc
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import UserService from '../Services/UserService'
 
 const ListUsersComponent = () => {
 
     const [employees, setEmployees] = useState([])
+
+
+    useEffect(() => {
+       UserService.getAllUsers().then ( (response) => {
+        setEmployees(response.data)
+        console.log(response.data);
+       }).catch(error =>{
+           console.log(error);
+
+       })
+    }, [])
 
     return (
         <div className='container'> 
@@ -44,3 +56,9 @@ const ListUsersComponent = () => {
 }
 
 export default ListUsersComponent
+
+
+//React useState Hook allows us to track state(data or properites) in a function component
+
+//The useEffect Hook allows you to perform side effects
+//(e.g  fetching data, directly updating the DOM, and timers.) in your components.
