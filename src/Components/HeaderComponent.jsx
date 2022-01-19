@@ -7,7 +7,7 @@ const HeaderComponent = () => {
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                             <div><a href="" className="navbar-brand">Resource Management System</a></div>
                     </nav>
-                </header>
+            </header>
         </div>
     )
 }

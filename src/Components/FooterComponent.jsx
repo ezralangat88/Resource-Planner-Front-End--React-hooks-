@@ -5,7 +5,7 @@ const FooterComponent = () => {
         <div>
             <footer className = "footer">
                     <span className="text-muted">All Rights Reserved 2022 @Ezra Guru</span>
-                </footer>
+            </footer>
         </div>
     )
 }
