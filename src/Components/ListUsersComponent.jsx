@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const ListUsersComponent = () => {
     
     //useState hook(function) allows having of state variables in functional components
-    const [employees, setEmployees] = useState([])
+    const [users, setUsers] = useState([])
 
-
+ //LIST - Using useEffect hook to retrieve all users
     useEffect(() => {
 
        getAllUsers();
@@ -19,7 +19,7 @@ const ListUsersComponent = () => {
    //Calling getAllUsers() to make Rest API Call and setting response data to users array.
     const getAllUsers = () =>{
         UserService.getAllUsers().then ( (response) => {
-            setEmployees(response.data)
+            setUsers(response.data)
             console.log(response.data);
            }).catch(error =>{
                console.log(error);
@@ -39,32 +39,32 @@ const ListUsersComponent = () => {
 
     return (
         <div className='container'> 
-                <h2 className='text-center'>Employee List</h2>  
-                <Link to = 'add-employee' className='btn btn-primary mb-2'>Add user</Link>
+                <h2 className='text-center'>User List</h2>  
+                <Link to = 'add-user' className='btn btn-primary mb-2'>Add user</Link>
                 <table className='table table-striped table-bordered'>
   
                 <thead>
-                        <th>Employee ID </th>
-                        <th>Employee First Name</th>
-                        <th>Employee Last Name</th>
-                        <th>Employee Email Id</th>
+                        <th>User ID </th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email Id</th>
                         <th>Actions</th>
                 </thead>
 
                 <tbody>
 
                     {
-                        employees.map (
-                            employee => 
-                                <tr key = {employee.id}>
+                        users.map (
+                            user => 
+                                <tr key = {user.id}>
 
-                                    <td> {employee.id} </td>
-                                    <td> {employee.firstName} </td>
-                                    <td> {employee.lastName} </td>
-                                    <td> {employee.emailId} </td>
+                                    <td> {user.id} </td>
+                                    <td> {user.firstName} </td>
+                                    <td> {user.lastName} </td>
+                                    <td> {user.emailId} </td>
                                     <td>
-                                       <Link to = {`/edit-employee/${employee.id}`} className='btn btn-info'> Update</Link>
-                                       <button className = "btn btn-danger" onClick = {() => deleteUser(employee.id)}
+                                       <Link to = {`/edit-user/${user.id}`} className='btn btn-info'> Update</Link>
+                                       <button className = "btn btn-danger" onClick = {() => deleteUser(user.id)}
                                     style = {{marginLeft:"10px"}}> Delete</button>
                                     </td>
                       

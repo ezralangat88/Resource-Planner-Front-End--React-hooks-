@@ -13,9 +13,9 @@ function App() {
         <HeaderComponent/>
           <Switch>
             <Route exact path = '/' component = {ListUsersComponent} ></Route>
-            <Route path = '/employees' component = {ListUsersComponent} ></Route>
-            <Route path = '/add-employee' component = {AddUserComponent} ></Route>
-            <Route path = '/edit-employee/:id' component = {AddUserComponent} ></Route>
+            <Route path = '/users' component = {ListUsersComponent} ></Route>
+            <Route path = '/add-user' component = {AddUserComponent} ></Route>
+            <Route path = '/edit-user/:id' component = {AddUserComponent} ></Route>
           </Switch>
         <FooterComponent/>
       </Router>

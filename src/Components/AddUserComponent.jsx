@@ -16,7 +16,7 @@ const AddUserComponent = () => {
 
     // SAVE or UPATE
     // Getting data from properties onclicking save btn
-    const saveorUpdateEmployee = (e) =>{
+    const saveorUpdateUser = (e) =>{
         //Prevents refreshing of the page on submit
         e.preventDefault();
 
@@ -25,7 +25,7 @@ const AddUserComponent = () => {
         //Condition for adding and updating user
         if(id){ //Update
             UserService.updateUser(id, user).then( (response) =>{
-                history.push('/employees');
+                history.push('/users');
             }).catch(error =>{
                 console.log(error);
             }) 
@@ -35,7 +35,7 @@ const AddUserComponent = () => {
 
             console.log(response.data);
 
-            history.push('/employees');
+            history.push('/users');
 
         }).catch(error =>{
             console.log(error);
@@ -62,10 +62,10 @@ const AddUserComponent = () => {
     const title = () =>{
 
         if(id){
-            return <h3 className="text-center">Update Employee</h3>
+            return <h3 className="text-center">Update User</h3>
         } 
         else {
-            return <h3 className="text-center">Add Employee</h3>
+            return <h3 className="text-center">Add User</h3>
 
         }
         
@@ -108,8 +108,8 @@ const AddUserComponent = () => {
                                     </div>
                                     <br/>
 
-                                    <button className='btn btn-success' onClick={(e) => saveorUpdateEmployee(e)}>Save</button>
-                                    <Link to="/employees" className="btn btn-danger" style={{marginLeft: "10px"}}>Cancel</Link>
+                                    <button className='btn btn-success' onClick={(e) => saveorUpdateUser(e)}>Save</button>
+                                    <Link to="/users" className="btn btn-danger" style={{marginLeft: "10px"}}>Cancel</Link>
                                 </form>       
                             </div>
                         </div>
