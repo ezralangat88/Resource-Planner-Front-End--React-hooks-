@@ -48,7 +48,10 @@ const ListUsersComponent = () => {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email Id</th>
+                        <th>Phone No</th>
+                        <th>Gender</th>
                         <th>Actions</th>
+                      
                 </thead>
 
                 <tbody>
@@ -62,6 +65,9 @@ const ListUsersComponent = () => {
                                     <td> {user.firstName} </td>
                                     <td> {user.lastName} </td>
                                     <td> {user.emailId} </td>
+                                    <td> {user.phoneNo} </td>
+                                    <td> {user.gender} </td>
+                                    
                                     <td>
                                        <Link to = {`/edit-user/${user.id}`} className='btn btn-info'> Update</Link>
                                        <button className = "btn btn-danger" onClick = {() => deleteUser(user.id)}

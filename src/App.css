@@ -7,3 +7,9 @@
   text-align: center;
   color: white;
 }
+
+.bgimg{
+  opacity: 2;
+  height: auto;
+  background-size: cover;
+}

@@ -8,6 +8,9 @@ const AddUserComponent = () => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [emailId, setEmailId] = useState('')
+    const [phoneNo, setPhoneNo] = useState('')
+    const [gender, setGender] = useState('')
+
     //useHistory() gives you access to the history instance that you use to navigate
     const history = useHistory();
     //useParams() will be used to retrieve ID from url - Provides objects that contains key value points from url 
@@ -20,7 +23,7 @@ const AddUserComponent = () => {
         //Prevents refreshing of the page on submit
         e.preventDefault();
 
-        const user = {firstName, lastName, emailId }
+        const user = {firstName, lastName, emailId, phoneNo, gender }
 
         //Condition for adding and updating user
         if(id){ //Update
@@ -51,6 +54,8 @@ const AddUserComponent = () => {
             setFirstName(response.data.firstName)
             setLastName(response.data.lastName)
             setEmailId(response.data.emailId)
+            setPhoneNo(response.data.phoneNo)
+            setGender(response.data.gender)
         }).catch(error =>{
             console.log(error);
         })
@@ -104,6 +109,22 @@ const AddUserComponent = () => {
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                    value={emailId} 
                                                    onChange={(e) => setEmailId(e.target.value)}
+                                            />
+                                    </div>
+
+                                    <div className = "form-group">
+                                        <label> Phone No: </label>
+                                            <input placeholder="Phone No" name="phoneNo" className="form-control" 
+                                                   value={phoneNo} 
+                                                   onChange={(e) => setPhoneNo(e.target.value)}
+                                            />
+                                    </div>
+
+                                    <div className = "form-group">
+                                        <label>Gender: </label>
+                                            <input placeholder="gender" name="gender" className="form-control" 
+                                                   value={gender} 
+                                                   onChange={(e) => setGender(e.target.value)}
                                             />
                                     </div>
                                     <br/>
