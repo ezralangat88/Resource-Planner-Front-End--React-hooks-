@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useHistory, useParams } from 'react-router-dom'
-import UserService from '../Services/UserService'
+import UserService from '../../Services/UserService' 
 
 const AddUserComponent = () => {
 
@@ -109,7 +109,7 @@ const AddUserComponent = () => {
                                     <br/>
 
                                     <button className='btn btn-success' onClick={(e) => saveorUpdateUser(e)}>Save</button>
-                                    <Link to="/users" className="btn btn-danger" style={{marginLeft: "10px"}}>Cancel</Link>
+                                    <Link to="/" className="btn btn-danger" style={{marginLeft: "10px"}}>Cancel</Link>
                                 </form>       
                             </div>
                         </div>
