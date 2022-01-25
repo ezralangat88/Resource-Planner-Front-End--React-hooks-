@@ -10,6 +10,9 @@ const HeaderComponent = () => {
                                 <a href="/" className="navbar-brand">Resource Management System</a>
                                 <Link to = 'add-user' className='btn btn-primary mb-2'>Add user</Link>                               
                                 <Link to = 'users' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}}>users</Link>
+                                <Link to = '' className='btn btn-primary mb-2' style = {{marginLeft:"200px"}}>Organizations</Link>
+                                <Link to = '' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}}>Venues</Link>
+                                <Link to = '' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}}>Meetings</Link>
                                 </div>
                     </nav>
             </header>

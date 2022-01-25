@@ -13,3 +13,11 @@
   height: auto;
   background-size: cover;
 }
+
+.navbar-bg{
+  background-color: rgb(2, 84, 87);
+}
+
+.navbar-color{
+  color: rgb(19, 161, 26)
+}
