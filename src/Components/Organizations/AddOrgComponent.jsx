@@ -20,7 +20,9 @@ const AddOrgComponent = () => {
 
         if(organizationId){ //Update
             OrganizationService.updateOrganization(organizationId, organization).then( (response)=>{
+
                 history.push('/list-org');
+                
             }).catch(error =>{
                 console.log(error);
             })

@@ -22,6 +22,7 @@ function App() {
             <Route path = '/edit-user/:id' component = {AddUserComponent} ></Route>
             <Route path={'/list-org'} component={ListOrgComponent}/>
             <Route path={'/add-org'} component={AddOrgComponent}></Route>
+            <Route path={'/edit-org/:organziationId'} component={AddOrgComponent}></Route>
           </Switch>
         <FooterComponent/>
       </Router>

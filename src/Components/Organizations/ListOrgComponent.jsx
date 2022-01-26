@@ -2,10 +2,12 @@ import React, {useState, useEffect} from 'react';
 import OrganizationService from '../../Services/OrganizationService';
 import { Link } from 'react-router-dom';
 
+//Defining state variable(s)
 const ListOrgComponent = () => {
 
     const [organizations, setOrganzaitions] = useState([]);
 
+    //List - retrieving all organizations
     useEffect(() => {
       
         getAllOrganizations();
@@ -13,6 +15,8 @@ const ListOrgComponent = () => {
 
     }, []);
 
+    //RETRIEVE - to update
+   //Calling getAllOrganizations() to make Rest API Call and setting response data to orgs array.
     const getAllOrganizations = () =>{
         OrganizationService.getAllOrganizations().then( (response) =>{
 
@@ -39,7 +43,7 @@ const ListOrgComponent = () => {
                 <Link to = 'add-org' className='btn btn-primary mb-2'>Add Organization</Link>  
                 <table className='table table-striped table-bordered'>
                     <thead>
-                        <th>ID</th>
+                        {/* <th>ID</th> */}
                         <th>Organization Name</th>
                     </thead>
                     <tbody>
@@ -48,7 +52,7 @@ const ListOrgComponent = () => {
                                 organization =>
                                 <tr key={organization.organizationId}>
     
-                                    <td>{organization.organizationId}</td>
+                                    {/* <td>{organization.organizationId}</td> */}
                                     <td>{organization.organizationName}</td>
     
                                     <td>
