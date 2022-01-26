@@ -10,8 +10,8 @@ class OrganizationService{
     }
 
     //Get Organzaition by ID
-    getOrganizationByID(organizationID){
-        return axios.get(ORG_API_BASE_URL + '/' + organizationID );
+    getOrganizationByID(organizationId){
+        return axios.get(ORG_API_BASE_URL + '/' + organizationId );
     }
 
     //Save
@@ -21,14 +21,14 @@ class OrganizationService{
     }
 
     //Update
-    updateOrganization(organizationID, organization){
-        return axios.put(ORG_API_BASE_URL + '/' + organizationID, organization)
+    updateOrganization(organizationId, organization){
+        return axios.put(ORG_API_BASE_URL + '/' + organizationId, organization)
 
     }
 
     //Delete
-    deleteOrganzation(organizationID){
-        return axios.delete(ORG_API_BASE_URL + '/' + organizationID);
+    deleteOrganzation(organizationId){
+        return axios.delete(ORG_API_BASE_URL + '/' + organizationId);
 
     }
 

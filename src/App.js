@@ -17,12 +17,12 @@ function App() {
         <HeaderComponent/>
           <Switch>
             <Route exact path = '/' component = {HomePageComponent} ></Route>
-            <Route path = '/users' component = {ListUsersComponent} ></Route>
-            <Route path = '/add-user' component = {AddUserComponent} ></Route>
-            <Route path = '/edit-user/:id' component = {AddUserComponent} ></Route>
-            <Route path={'/list-org'} component={ListOrgComponent}/>
-            <Route path={'/add-org'} component={AddOrgComponent}></Route>
-            <Route path={'/edit-org/:organziationId'} component={AddOrgComponent}></Route>
+            <Route exact path = '/users' component = {ListUsersComponent} ></Route>
+            <Route exact path = '/add-user' component = {AddUserComponent} ></Route>
+            <Route exact path = '/edit-user/:id' component = {AddUserComponent} ></Route>
+            <Route exact path='/list-org' component={ListOrgComponent}/>
+            <Route exact path='/add-org' component={AddOrgComponent}></Route>
+            <Route exact path='/edit-org/:organziationId' component={AddOrgComponent}></Route>
           </Switch>
         <FooterComponent/>
       </Router>
