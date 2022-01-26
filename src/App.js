@@ -6,6 +6,9 @@ import ListUsersComponent from './Components/Users/ListUsersComponent';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import AddUserComponent from './Components/Users/AddUserComponent';
 import HomePageComponent from './Components/HomePageComponent';
+import ListOrgComponent from './Components/Organizations/ListOrgComponent';
+import AddOrgComponent from './Components/Organizations/AddOrgComponent';
+
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
             <Route path = '/users' component = {ListUsersComponent} ></Route>
             <Route path = '/add-user' component = {AddUserComponent} ></Route>
             <Route path = '/edit-user/:id' component = {AddUserComponent} ></Route>
+            <Route path={'/list-org'} component={ListOrgComponent}/>
+            <Route path={'/add-org'} component={AddOrgComponent}></Route>
           </Switch>
         <FooterComponent/>
       </Router>

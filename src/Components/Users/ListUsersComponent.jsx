@@ -15,7 +15,7 @@ const ListUsersComponent = () => {
 
     }, [])
 
-   //RETRIEVE 
+   //RETRIEVE - to update
    //Calling getAllUsers() to make Rest API Call and setting response data to users array.
     const getAllUsers = () =>{
         UserService.getAllUsers().then ( (response) => {
@@ -26,7 +26,8 @@ const ListUsersComponent = () => {
     
            })
     }
-
+    
+    //DELETE
     const deleteUser = (userid) => {
         UserService.deleteUser(userid).then( (response) =>{
             getAllUsers();  

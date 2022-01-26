@@ -28,7 +28,9 @@ const AddUserComponent = () => {
         //Condition for adding and updating user
         if(id){ //Update
             UserService.updateUser(id, user).then( (response) =>{
+
                 history.push('/users');
+                
             }).catch(error =>{
                 console.log(error);
             }) 
