@@ -41,7 +41,7 @@ const ListUsersComponent = () => {
     return (
         <div className='container'> 
                 <h2 className='text-center'>User List</h2>  
-                {/* <Link to = 'add-user' className='btn btn-primary mb-2'>Add user</Link> */}
+                <Link to = 'add-user' className='btn btn-primary mb-2'>Add user</Link>
                 <table className='table table-striped table-bordered'>
   
                 <thead>
@@ -72,7 +72,7 @@ const ListUsersComponent = () => {
                                     <td>
                                        <Link to = {`/edit-user/${user.id}`} className='btn btn-info'> Update</Link>
                                        <button className = "btn btn-danger" onClick = {() => deleteUser(user.id)}
-                                    style = {{marginLeft:"10px"}}> Delete</button>
+                                               style = {{marginLeft:"10px"}}> Delete</button>
                                     </td>
                       
 

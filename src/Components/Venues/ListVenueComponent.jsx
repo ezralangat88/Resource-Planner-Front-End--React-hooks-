@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import venueService from '../../Services/venueService';
 
 const ListVenueComponent = () => {
@@ -43,6 +43,7 @@ const ListVenueComponent = () => {
   return (
     <div className='container'>
         <h2 className='text-center'>List Venues</h2>
+        <Link to = '/create/venue' className='btn btn-primary mb-2'>Add Venue</Link>
         <table className='table table-striped table-bordered'>
             <thead>
                 <th>Room ID:</th>
@@ -51,20 +52,26 @@ const ListVenueComponent = () => {
                 <th>TV:</th>
                 <th>Whiteboard:</th>
                 <th>Conference Phone</th>
+                <th>Actions</th>
             </thead>
 
             <tbody>
                 {
                     venues.map (
                         venue =>
-                            <tr key={venue.venueid}>
+                            <tr key={venue.boardroomId}>
 
-                                <td>{venue.venueid}</td>
+                                <td>{venue.boardroomId}</td>
                                 <td>{venue.boardroomName}</td>
                                 <td>{venue.capacity}</td>
                                 <td>{venue.tv}</td>
                                 <td>{venue.whiteboard}</td>
                                 <td>{venue.conferencePhone}</td>
+                                <td>
+                                    <Link to={`/update/venue/${venue.boardroomId}`} className = "btn btn-info">Update</Link>
+                                    <button className = "btn btn-danger" onClick = {() => deleteVenue(venue.boardroomId)}
+                                               style = {{marginLeft:"10px"}}> Delete</button>
+                                </td>
 
                             </tr>
                         

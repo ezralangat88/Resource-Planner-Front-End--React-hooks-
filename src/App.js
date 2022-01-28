@@ -9,6 +9,7 @@ import HomePageComponent from './Components/HomePageComponent';
 import ListOrgComponent from './Components/Organizations/ListOrgComponent';
 import AddOrgComponent from './Components/Organizations/AddOrgComponent';
 import ListVenueComponent from './Components/Venues/ListVenueComponent';
+import AddorUpdateVenue from './Components/Venues/AddorUpdateVenue';
 
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
             <Route exact path='/add-org' component={AddOrgComponent}></Route>
             <Route exact path='/edit-org/:organziationId' component={AddOrgComponent}></Route>
             <Route exact path = '/venues' component = {ListVenueComponent} ></Route>
+            <Route exact path = '/create/venue' component = {AddorUpdateVenue} ></Route>
+            <Route exact path = '/update/venue/:boardroomId' component = {AddorUpdateVenue} ></Route>
           </Switch>
         <FooterComponent/>
       </Router>

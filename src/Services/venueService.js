@@ -23,12 +23,12 @@ class VenueService{
 
     //Update
     updateVenue(venueid, venue){
-        return axios.put(USER_API_BASE_URL + '/update' + venueid, venue);
+        return axios.put(USER_API_BASE_URL + '/update/' + venueid, venue);
     }
 
     //Delete
      deleteVenueById(venueid){
-        return axios.delete(USER_API_BASE_URL + '/delete' + venueid);
+        return axios.delete(USER_API_BASE_URL + '/delete/' + venueid);
 
     }
 
