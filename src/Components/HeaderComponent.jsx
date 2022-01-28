@@ -8,7 +8,7 @@ const HeaderComponent = () => {
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                             <div>
                                 <a href="/" className="navbar-brand">Resource Management System</a>
-                                <Link to = 'add-user' className='btn btn-primary mb-2'>Add user</Link>                               
+                                {/* <Link to = 'add-user' className='btn btn-primary mb-2'>Add user</Link>                                */}
                                 <Link to = 'users' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}}>users</Link>
                                 <Link to = '/list-org' className='btn btn-primary mb-2' style = {{marginLeft:"200px"}}>Organizations</Link>
                                 <Link to = '/venues' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}}>Venues</Link>
