@@ -43,7 +43,7 @@ const ListOrgComponent = () => {
                 <Link to = 'add-org' className='btn btn-primary mb-2'>Add Organization</Link>  
                 <table className='table table-striped table-bordered'>
                     <thead>
-                        {/* <th>ID</th> */}
+                        <th>ID</th>
                         <th>Organization Name</th>
                     </thead>
                     <tbody>
@@ -52,7 +52,7 @@ const ListOrgComponent = () => {
                                 organization =>
                                 <tr key={organization.organizationId}>
     
-                                    {/* <td>{organization.organizationId}</td> */}
+                                    <td>{organization.organizationId}</td>
                                     <td>{organization.organizationName}</td>
     
                                     <td>

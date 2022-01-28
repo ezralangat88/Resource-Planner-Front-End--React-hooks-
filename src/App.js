@@ -8,6 +8,7 @@ import AddUserComponent from './Components/Users/AddUserComponent';
 import HomePageComponent from './Components/HomePageComponent';
 import ListOrgComponent from './Components/Organizations/ListOrgComponent';
 import AddOrgComponent from './Components/Organizations/AddOrgComponent';
+import ListVenueComponent from './Components/Venues/ListVenueComponent';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route exact path='/list-org' component={ListOrgComponent}/>
             <Route exact path='/add-org' component={AddOrgComponent}></Route>
             <Route exact path='/edit-org/:organziationId' component={AddOrgComponent}></Route>
+            <Route exact path = '/venues' component = {ListVenueComponent} ></Route>
           </Switch>
         <FooterComponent/>
       </Router>
