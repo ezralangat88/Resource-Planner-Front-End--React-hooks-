@@ -76,7 +76,7 @@ const AddOrgComponent = () => {
                                         <div className='form-group'>
                                             <label>Organization Name: </label>
                                             <input placeholder='Organization Name' name="organizationName" className="form-control"
-                                                value={organizationId} 
+                                                value={organizationName} 
                                                 // storing form data values in the properties onChange. 
                                                 //event.target.value retrieves / access value of whatever input it was called on.
                                                 onChange={(e) =>setOrganizationName(e.target.value)}

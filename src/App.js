@@ -24,7 +24,7 @@ function App() {
             <Route exact path = '/edit-user/:id' component = {AddUserComponent} ></Route>
             <Route exact path='/list-org' component={ListOrgComponent}/>
             <Route exact path='/add-org' component={AddOrgComponent}></Route>
-            <Route exact path='/edit-org/:organziationId' component={AddOrgComponent}></Route>
+            <Route exact path='/edit-org/:organizationId' component={AddOrgComponent}></Route>
             <Route exact path = '/venues' component = {ListVenueComponent} ></Route>
             <Route exact path = '/create/venue' component = {AddorUpdateVenue} ></Route>
             <Route exact path = '/update/venue/:boardroomId' component = {AddorUpdateVenue} ></Route>
