@@ -4,102 +4,101 @@ import UserService from '../Services/UserService';
 
 
 const Search = () => {
-    
-    //useState hook(function) allows having of state variables in functional components
-    const [users, setUsers] = useState([])
 
-    const [searchTerm, setSearchTerm] = useState("");
+   
+        const [error, setError] = useState(null);
+        const [isLoaded, setIsLoaded] = useState(false);
+        const [items, setItems] = useState([]);
+  
+        // Note: the empty deps array [] means
+        // this useEffect will run once
+        // similar to componentDidMount()
+        useEffect(() => {
+          fetch("https://jsonplaceholder.typicode.com/users")
+            .then(res => res.json())
+            .then(
+              (result) => {
+                setIsLoaded(true);
+                setItems(result);
+              },
+              // Note: it's important to handle errors here
+              // instead of a catch() block so that we don't swallow
+              // exceptions from actual bugs in components.
+              (error) => {
+                setIsLoaded(true);
+                setError(error);
+              }
+            )
+        }, [])
+  
+        if (error) {
+          return <div>Error: {error.message}</div>;
+        } else if (!isLoaded) {
+          return <div>Loading...</div>;
+        } else {
+          return (
+            // <ul>
+            //   {items.map(item => (
+            //     <li key={item.id}>
+            //       {item.name} {item.username} {item.email}
+            //     </li>
+            //   ))}
+            // </ul>
+            /* here we map over the element and display each item as a card  */
+            <div className="wrapper">
+            <ul className="card-grid">
+                {items.map((item) => (
+                    <li>
+                        <article className="card" key={item.callingCodes}>
+                            <div className="card-image">
+                                <img src={item.flag} alt={item.name} />
+                            </div>
+                            <div className="card-content">
+                                <h2 className="card-name">{item.name}</h2>
+                                <ol className="card-list">
+                                    <li>
+                                        UserName:{" "}
+                                        <span>{item.username}</span>
+                                    </li>
+                                    <li>
+                                        Email: <span>{item.email}</span>
+                                    </li>
+                                    {/* <li>
+                                        Capital: <span>{item.capital}</span>
+                                    </li> */}
+                                </ol>
+                            </div>
+                        </article>
+                    </li>
+                ))}
+            </ul>
+        </div>
+          );
+        }
+      }
 
- //LIST - Using useEffect hook to retrieve all users
-    useEffect(() => {
-
-       getAllUsers();
-
-    }, [])
-
-   //RETRIEVE - to update
-   //Calling getAllUsers() to make Rest API Call and setting response data to users array.
-    const getAllUsers = () =>{
-        UserService.getAllUsers().then ( (response) => {
-            setUsers(response.data)
-            console.log(response.data);
-           }).catch(error =>{
-               console.log(error);
-    
-           })
-    }
-    
-    //DELETE
-    const deleteUser = (userid) => {
-        UserService.deleteUser(userid).then( (response) =>{
-            getAllUsers();  
-
-        }).catch(error =>{
-            console.log(error);
-        })
-    }
 
 
-    return (
-        <div className='container'> 
-                <h2 className='text-center'>User List</h2>  
-                {/* Search */}
 
-                <input type="text" placeholder='Search...' 
-                onChange={(event) =>{
-                    setSearchTerm(event.target.value)
-                }}/>     
-                 {/* End of Search */}
-                <Link to = 'add-user' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}} >Add user</Link>
-                <table className='table table-striped table-bordered'>
-                <thead>
-                        <th>User ID </th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email Id</th>
-                        <th>Phone No</th>
-                        <th>Gender</th>
-                        <th>Actions</th>
-                      
-                </thead>
+//     const [searchTerm, setSearchTerm] = useState("");
 
-                <tbody>
+//     const [users, setUsers] = useState([])
 
-                    {
-                        users.filter((user)=>{
-                            if(setSearchTerm == ""){
-                                return user
-                            }else if(user.firstName.toLowerCase().includes(searchTerm.firstName.toLowerCase())){
-                                return user
-                            }
-                        }).map (
-                            user => 
-                                <tr key = {user.id}>
 
-                                    <td> {user.id} </td>
-                                    <td> {user.firstName} </td>
-                                    <td> {user.lastName} </td>
-                                    <td> {user.emailId} </td>
-                                    <td> {user.phoneNo} </td>
-                                    <td> {user.gender} </td>
-                                    
-                                    <td>
-                                       <Link to = {`/edit-user/${user.id}`} className='btn btn-info'> Update</Link>
-                                       <button className = "btn btn-danger" onClick = {() => deleteUser(user.id)}
-                                               style = {{marginLeft:"10px"}}> Delete</button>
-                                    </td>
-                      
+//   return (
+//     <div className='container'> 
+//                 <h2 className='text-center'>User List</h2>  
+//                 Search
 
-                                </tr>
-                            
-                        )
-                    }
+//                 <input type="text" placeholder='Search...' 
+//                 onChange={(event) =>{
+//                     setSearchTerm(event.target.value)
+//                 }}/>     
+//                  {/* End of Search */}
+            
                 
-                </tbody>
-                </table>
-                
-            </div>
-    )
-}
+//             </div>
+//   );
+
 
 export default Search;
