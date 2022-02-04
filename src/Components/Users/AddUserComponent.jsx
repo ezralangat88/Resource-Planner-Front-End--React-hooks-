@@ -24,7 +24,16 @@ const AddUserComponent = () => {
         e.preventDefault();
 
         const user = {firstName, lastName, emailId, phoneNo, gender }
+      //Preventing adding empty fields
+        if(user.firstName ==="" || user.lastName ==="" ||
+        user.phoneNo ==="" ||user.gender ==="" ||
+        user.emailId ===""){
+            alert("All the fields are mandatory!");
+         return;
 
+        }
+
+    
         //Condition for adding and updating user
         if(id){ //Update
             UserService.updateUser(id, user).then( (response) =>{
@@ -45,6 +54,7 @@ const AddUserComponent = () => {
         }).catch(error =>{
             console.log(error);
         })
+
        
     }   
 }

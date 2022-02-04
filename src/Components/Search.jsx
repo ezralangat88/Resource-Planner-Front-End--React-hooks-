@@ -1,9 +1,9 @@
-//rafc /rfc
 import React, {useState, useEffect} from 'react'
-import UserService from '../../Services/UserService'
 import { Link } from 'react-router-dom';
+import UserService from '../Services/UserService';
 
-const ListUsersComponent = () => {
+
+const Search = () => {
     
     //useState hook(function) allows having of state variables in functional components
     const [users, setUsers] = useState([])
@@ -66,7 +66,13 @@ const ListUsersComponent = () => {
                 <tbody>
 
                     {
-                        users.map (
+                        users.filter((user)=>{
+                            if(setSearchTerm == ""){
+                                return user
+                            }else if(user.firstName.toLowerCase().includes(searchTerm.firstName.toLowerCase())){
+                                return user
+                            }
+                        }).map (
                             user => 
                                 <tr key = {user.id}>
 
@@ -96,13 +102,4 @@ const ListUsersComponent = () => {
     )
 }
 
-export default ListUsersComponent
-
-
-//React useState Hook allows us to track state(data or properites) in a function component
-
-//The useEffect Hook allows you to perform side effects
-//(e.g  fetching data, directly updating the DOM, and timers.) in your components.
-
-//useHistory Hook gives you access to the history instance that you use to navigate.
-//useParams Hook is used to retrieve ID from url - Provides objects that contains key value points from url 
+export default Search;
