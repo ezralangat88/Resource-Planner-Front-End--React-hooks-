@@ -7,7 +7,8 @@ const AddUserComponent = () => {
     //Creating states / Properties for AddUserComponent using useState hook
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
-    const [emailId, setEmailId] = useState('')
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('');
     const [phoneNo, setPhoneNo] = useState('')
     const [gender, setGender] = useState('')
 
@@ -23,11 +24,11 @@ const AddUserComponent = () => {
         //Prevents refreshing of the page on submit
         e.preventDefault();
 
-        const user = {firstName, lastName, emailId, phoneNo, gender }
+        const user = {firstName, lastName, password, username, phoneNo, gender }
       //Preventing adding empty fields
         if(user.firstName ==="" || user.lastName ==="" ||
         user.phoneNo ==="" ||user.gender ==="" ||
-        user.emailId ===""){
+        user.username ==="" || user.password ===""){
             alert("All the fields are mandatory!");
          return;
 
@@ -65,7 +66,8 @@ const AddUserComponent = () => {
         UserService.getUserById(id).then( (response) =>{
             setFirstName(response.data.firstName)
             setLastName(response.data.lastName)
-            setEmailId(response.data.emailId)
+            setUsername(response.data.username)
+            setPassword(response.data.password)
             setPhoneNo(response.data.phoneNo)
             setGender(response.data.gender)
         }).catch(error =>{
@@ -118,9 +120,17 @@ const AddUserComponent = () => {
 
                                     <div className = "form-group">
                                         <label> Email Id: </label>
-                                            <input placeholder="Email Address" name="emailId" className="form-control" 
-                                                   value={emailId} 
-                                                   onChange={(e) => setEmailId(e.target.value)}
+                                            <input placeholder="Email Address" name="username" className="form-control" 
+                                                   value={username} 
+                                                   onChange={(e) => setUsername(e.target.value)}
+                                            />
+                                    </div>
+
+                                    <div className = "form-group">
+                                        <label> Password: </label>
+                                            <input type="password" name="password" placeholder="Password" className="form-control" 
+                                                   value={password} 
+                                                   onChange={(e) => setPassword(e.target.value)}
                                             />
                                     </div>
 

@@ -57,6 +57,7 @@ const ListUsersComponent = () => {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email Id</th>
+                        {/* <th>Password</th> */}
                         <th>Phone No</th>
                         <th>Gender</th>
                         <th>Actions</th>
@@ -73,7 +74,8 @@ const ListUsersComponent = () => {
                                     <td> {user.id} </td>
                                     <td> {user.firstName} </td>
                                     <td> {user.lastName} </td>
-                                    <td> {user.emailId} </td>
+                                    <td> {user.username} </td>
+                                    {/* <td> {user.password} </td> */}
                                     <td> {user.phoneNo} </td>
                                     <td> {user.gender} </td>
                                     
