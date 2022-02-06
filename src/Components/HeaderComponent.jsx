@@ -14,6 +14,7 @@ const HeaderComponent = () => {
                                 <Link to = '/list-org' className='btn btn-primary mb-2' style = {{marginLeft:"200px"}}>Organizations</Link>
                                 <Link to = '/venues' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}}>Venues</Link>
                                 <Link to = '' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}}>Meetings</Link>
+                                <Link to = '/role' className='btn btn-primary mb-2' style = {{marginLeft:"10px"}}>Roles</Link>
                                 </div>
                     </nav>
             </header>

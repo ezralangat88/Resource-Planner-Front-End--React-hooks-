@@ -11,6 +11,8 @@ import AddOrgComponent from './Components/Organizations/AddOrgComponent';
 import ListVenueComponent from './Components/Venues/ListVenueComponent';
 import AddorUpdateVenue from './Components/Venues/AddorUpdateVenue';
 import Search from './Components/Search';
+import ListRolesComponent from './Components/Roles/ListRolesComponent';
+import AddOrUpdateRoleComponent from './Components/Roles/AddOrUpdateRoleComponent';
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
             <Route exact path = '/create/venue' component = {AddorUpdateVenue} ></Route>
             <Route exact path = '/update/venue/:boardroomId' component = {AddorUpdateVenue} ></Route>
             <Route exact path = '/users-search' component = {Search} ></Route>
+            <Route exact path = '/role' component = {ListRolesComponent} ></Route>
+            <Route exact path = '/role/save' component = {AddOrUpdateRoleComponent} ></Route>
           </Switch>
         <FooterComponent/>
       </Router>
